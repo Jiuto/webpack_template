@@ -108,6 +108,7 @@ function setEntryHtml(match, dirName, fullpath, type) {
         template: path.join(projectRoot, templatePath),
         filename: `${outputPath}.html`,
         chunks: ["vendors", outputPath],
+        hash: true,
         minify: {
             html5: true,
             collapseWhitespace: true,
