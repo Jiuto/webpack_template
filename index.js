@@ -78,10 +78,7 @@ function setEntryHtml(match,dirName,fullpath,type) {
 }
 
 function resloveDirs(dir, type) {
-    if (type === 0) {
-        // 处理首页
-        return glob.sync(path.join(projectRoot, "index.js"));
-    } else if (type === 1) {
+    if (type === 1) {
         // 处理自定义目录下的子目录
         return glob.sync(path.join(projectRoot, `src/pages/${dir}/*/index.js`));
     } else if (type === 2) {
