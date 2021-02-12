@@ -3,10 +3,10 @@ const path = require("path");
 const projectRoot = process.cwd();
 
 exports.setEntryAndHtmlPlugin = function (entryFile) {
-    //处理自定义入口
+    // 处理自定义目录
     let custom=handleCustom(entryFile);
 
-    //整合入口
+    // 整合配置
     const entry = {};
     const htmlWebpackPlugins = [];
     custom.forEach((v)=>{
@@ -45,7 +45,7 @@ function handleCustom(entryFile) {
 }
 
 //设置入口和模板
-// type 0 首页 1 自定义目录 2 自定义目录下index
+// type 0 首页 1 自定义目录的子页面 2 自定义目录的首页
 function setEntryHtml(match,dirName,fullpath,type) {
     let templatePath = type !== 1
                             ? `src/pages/${dirName}/${match}.html`
