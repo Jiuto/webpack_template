@@ -1,4 +1,4 @@
-### webpack多页面打包工具
+### webpack多页面打包模板
 
 #### 打包前后目录结构效果
 
@@ -74,7 +74,7 @@ import './index.css'
 
 ##### webpack配置
 
-引入webpack-utils，example示例中即`const utils = require('../index.js');`
+引入webpack-utils，本示例中即`const utils = require('../index.js');`
 
 ```js
 const HtmlWebpackPlugin = require("html-webpack-plugin");

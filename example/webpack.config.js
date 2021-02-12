@@ -1,12 +1,11 @@
 const path = require("path");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const utils = require('./webpackUtils');
-
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const utils = require('../index.js');
 const devMode = process.env.NODE_ENV === "development" ? true : false;
-
-const { entry, htmlWebpackPlugins } = utils.setEntryAndHtmlPlugin();
+const pagesFile = ['shoppingMall', 'personalCenter', 'home'];
+const { entry, htmlWebpackPlugins } = utils.setEntryAndHtmlPlugin(pagesFile);
 
 module.exports = {
     entry: entry,
@@ -68,5 +67,5 @@ module.exports = {
               { from: path.resolve(__dirname, "src/api"), to: "api" }
             ],
         }),
-    ].concat(htmlWebpackPlugins),
+    ].concat(htmlWebpackPlugins.map(html=>{return new HtmlWebpackPlugin(html)})),
 }
