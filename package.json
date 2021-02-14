@@ -1,5 +1,5 @@
 {
-  "name": "webpack-utils",
+  "name": "webpack-utils-c",
   "version": "1.0.0",
   "description": "webpack多页面打包工具",
   "main": "index.js",
